@@ -72,9 +72,20 @@
   position: relative;
 }
 
+/* Invisible bridge fills the gap between button and menu so mouseLeave doesn't fire */
+.navbar__dropdown-wrap::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 12px;
+  display: block;
+}
+
 .navbar__dropdown {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 4px);
   left: 0;
   background: var(--color-white);
   border-radius: var(--radius-md);
@@ -82,12 +93,29 @@
   min-width: 240px;
   padding: 0.5rem;
   border: 1px solid var(--color-border);
-  animation: fadeSlideDown 180ms ease;
+  /* Always in DOM — toggled via visibility + opacity so hover stays stable */
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 0ms linear 180ms;
+  z-index: 100;
 }
 
-@keyframes fadeSlideDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+.navbar__dropdown--open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 0ms linear 0ms;
+}
+
+.navbar__chevron {
+  transition: transform 220ms ease;
+}
+
+.navbar__chevron--open {
+  transform: rotate(180deg);
 }
 
 .navbar__dropdown-item {

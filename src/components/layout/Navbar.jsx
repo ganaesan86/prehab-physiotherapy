@@ -20,6 +20,16 @@ export default function Navbar({ onAnchorClick }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const location = useLocation();
   const dropdownRef = useRef(null);
+  const closeTimer = useRef(null);
+
+  const openDropdown = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setDropdownOpen(true);
+  };
+
+  const closeDropdown = () => {
+    closeTimer.current = setTimeout(() => setDropdownOpen(false), 120);
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -81,8 +91,8 @@ export default function Navbar({ onAnchorClick }) {
               <li
                 className="navbar__dropdown-wrap"
                 ref={dropdownRef}
-                onMouseEnter={() => setDropdownOpen(true)}
-                onMouseLeave={() => setDropdownOpen(false)}
+                onMouseEnter={openDropdown}
+                onMouseLeave={closeDropdown}
               >
                 <button
                   className="navbar__link navbar__dropdown-trigger"
@@ -90,19 +100,22 @@ export default function Navbar({ onAnchorClick }) {
                   aria-expanded={dropdownOpen}
                   onClick={() => setDropdownOpen((v) => !v)}
                 >
-                  Services <ChevronDown size={16} />
+                  Services <ChevronDown size={16} className={`navbar__chevron${dropdownOpen ? " navbar__chevron--open" : ""}`} />
                 </button>
-                {dropdownOpen && (
-                  <ul className="navbar__dropdown" role="menu">
-                    {SERVICES.map((s) => (
-                      <li key={s.href} role="none">
-                        <Link to={s.href} className="navbar__dropdown-item" role="menuitem">
-                          {s.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <ul
+                  className={`navbar__dropdown${dropdownOpen ? " navbar__dropdown--open" : ""}`}
+                  role="menu"
+                  onMouseEnter={openDropdown}
+                  onMouseLeave={closeDropdown}
+                >
+                  {SERVICES.map((s) => (
+                    <li key={s.href} role="none">
+                      <Link to={s.href} className="navbar__dropdown-item" role="menuitem">
+                        {s.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </li>
               <li>
                 <button className="navbar__link" onClick={() => handleAnchor("reviews")}>

@@ -10,8 +10,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: var(--color-text);
-  background: var(--color-surface);
+  color: var(--color-white);
+  background: var(--color-obsidian);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -50,7 +50,7 @@ ul, ol {
   top: -40px;
   left: 0;
   background: var(--color-accent);
-  color: white;
+  color: var(--color-obsidian);
   padding: 8px;
   text-decoration: none;
   font-weight: 600;
@@ -60,6 +60,14 @@ ul, ol {
 
 .skip-link:focus {
   top: 0;
+}
+
+/* Platinum divider line utility */
+.platinum-line {
+  width: 48px;
+  height: 2px;
+  background: var(--color-accent);
+  margin-bottom: 1.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

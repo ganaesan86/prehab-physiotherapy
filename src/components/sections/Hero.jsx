@@ -77,6 +77,9 @@ export default function Hero({ onAnchorClick }) {
         <div className="hero__overlay" aria-hidden="true" />
       </div>
 
+      {/* Decorative corner bracket */}
+      <div className="hero__bracket" aria-hidden="true" />
+
       {/* Content */}
       <div className="container hero__content">
         <motion.div
@@ -88,7 +91,7 @@ export default function Hero({ onAnchorClick }) {
           <span className="hero__eyebrow">Maple, Ontario — High Performance Care</span>
           <h1 className="hero__heading">
             Recover Stronger.<br />
-            Perform Better.
+            <em>Perform Better.</em>
           </h1>
           <p className="hero__sub">
             Physiotherapy, strength &amp; conditioning, and massage therapy — all in one community-driven clinic.

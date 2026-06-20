@@ -1,7 +1,8 @@
 .specialist {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 480px;
+  min-height: 520px;
+  border-top: 1px solid var(--color-border);
 }
 
 .specialist__image-half {
@@ -14,6 +15,12 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
+  filter: grayscale(40%) brightness(0.7) contrast(1.1);
+  transition: filter 600ms ease;
+}
+
+.specialist__image-half:hover .specialist__img {
+  filter: grayscale(20%) brightness(0.75) contrast(1.05);
 }
 
 .specialist__img-overlay {
@@ -22,16 +29,17 @@
   background: linear-gradient(
     to right,
     transparent 30%,
-    var(--color-primary) 100%
+    var(--color-obsidian) 100%
   );
 }
 
 .specialist__content-half {
-  background: var(--color-primary);
+  background: var(--color-obsidian-2);
   padding: 4rem 3.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-left: 1px solid var(--color-border);
 }
 
 .eyebrow--light {
@@ -41,25 +49,29 @@
 .specialist__heading {
   font-family: var(--font-display);
   font-size: var(--text-3xl);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-white);
-  line-height: 1.15;
+  line-height: 1.1;
   margin: 0.875rem 0 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
 }
 
 .specialist__body {
   font-size: var(--text-base);
-  color: rgba(255,255,255,0.78);
-  line-height: 1.75;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
   max-width: 420px;
   margin-bottom: 2rem;
+  font-weight: 300;
 }
 
+/* Platinum accent card */
 .specialist__card {
-  background: rgba(255,255,255,0.08);
-  border-radius: var(--radius-md);
+  background: transparent;
+  border-radius: var(--radius-sm);
   padding: 1.25rem 1.5rem;
-  border-left: 3px solid var(--color-accent);
+  border-left: 2px solid var(--color-accent);
   margin-bottom: 2rem;
   display: inline-flex;
 }
@@ -67,60 +79,57 @@
 .specialist__card-info {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.3rem;
 }
 
 .specialist__name {
-  font-size: var(--text-lg);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
   font-weight: 700;
   color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .specialist__role {
   font-size: var(--text-sm);
   color: var(--color-accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 
 .specialist__btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-accent);
-  color: white;
-  padding: 0.875rem 2rem;
-  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  color: var(--color-obsidian);
+  padding: 0.9375rem 2rem;
+  border-radius: var(--radius-sm);
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: var(--text-base);
+  font-size: var(--text-xs);
   text-decoration: none;
-  transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all var(--transition-base);
   align-self: flex-start;
 }
 
 .specialist__btn:hover {
-  background: var(--color-accent-light);
+  background: var(--color-accent);
+  color: var(--color-obsidian);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(232,73,15,0.40);
+  box-shadow: 0 6px 28px rgba(192,192,200,0.25);
 }
 
 @media (max-width: 768px) {
-  .specialist {
-    grid-template-columns: 1fr;
-  }
-
-  .specialist__image-half {
-    height: 260px;
-  }
-
+  .specialist { grid-template-columns: 1fr; }
+  .specialist__image-half { height: 280px; }
   .specialist__img-overlay {
-    background: linear-gradient(
-      to bottom,
-      transparent 30%,
-      var(--color-primary) 100%
-    );
+    background: linear-gradient(to bottom, transparent 30%, var(--color-obsidian) 100%);
   }
-
-  .specialist__content-half {
-    padding: 2.5rem 1.5rem;
-  }
+  .specialist__content-half { padding: 2.5rem 1.5rem; border-left: none; border-top: 1px solid var(--color-border); }
 }

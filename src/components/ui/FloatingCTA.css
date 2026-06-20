@@ -24,24 +24,25 @@
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
-  background: var(--color-accent);
-  color: white;
+  background: var(--color-white);
+  color: var(--color-obsidian);
   padding: 1rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: var(--text-base);
+  font-size: var(--text-xs);
   text-decoration: none;
-  box-shadow: 0 4px 20px rgba(232,73,15,0.45);
-  transition: background var(--transition-base);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  transition: background var(--transition-base), color var(--transition-base);
 }
 
 .floating-cta__btn:hover {
-  background: var(--color-accent-light);
+  background: var(--color-accent);
+  color: var(--color-obsidian);
 }
 
 @media (max-width: 768px) {
-  .floating-cta {
-    display: block;
-  }
+  .floating-cta { display: block; }
 }

@@ -1,64 +1,84 @@
 :root {
-  /* ── Obsidian / White / Platinum palette ── */
-  --color-primary: #0A0A0A;          /* Obsidian black */
-  --color-obsidian: #0A0A0A;
-  --color-obsidian-2: #141414;       /* Slightly lifted obsidian for cards */
-  --color-obsidian-3: #1C1C1C;       /* Borders / dividers on dark bg */
+  /* ── Elite Performance: Obsidian · White · Platinum ── */
 
-  --color-accent: #C0C0C8;           /* Platinum silver */
-  --color-accent-light: #D8D8E0;     /* Lighter platinum for hovers */
-  --color-accent-dim: rgba(192,192,200,0.15); /* Subtle platinum tint */
+  /* Core palette */
+  --color-obsidian:   #0D0D0D;        /* True obsidian — hero, footer */
+  --color-obsidian-2: #161618;        /* Slightly lifted — dark cards */
+  --color-obsidian-3: #1E1E20;        /* Elevated — hover states */
+  --color-charcoal:   #2A2A2E;        /* Borders on dark */
 
-  --color-white: #FFFFFF;
-  --color-surface: #F5F5F5;          /* Off-white for light sections */
-  --color-surface-dark: #0A0A0A;     /* Obsidian — same as primary */
+  --color-platinum:   #B8B8C4;        /* Core platinum accent */
+  --color-platinum-light: #D4D4DE;    /* Hover / brighter platinum */
+  --color-platinum-dim: rgba(184,184,196,0.12); /* Subtle tint */
+  --color-platinum-glow: rgba(184,184,196,0.20);
 
-  --color-text: #FFFFFF;             /* Default text is white (dark-first) */
-  --color-text-on-light: #0A0A0A;    /* Text on white/light backgrounds */
-  --color-text-muted: rgba(255,255,255,0.55);
-  --color-text-muted-light: #6B7280; /* Muted on light bg */
+  --color-white:      #FFFFFF;
+  --color-off-white:  #F8F8FA;        /* Light section bg */
+  --color-light-2:    #F0F0F4;        /* Slightly deeper light */
+  --color-light-border: #E0E0E8;      /* Borders on light bg */
 
-  --color-border: #2A2A2A;           /* Dark borders */
-  --color-border-light: #E2E6EA;     /* Borders on white bg */
+  /* Text */
+  --color-text-dark:  #0D0D0D;        /* Body text on light bg */
+  --color-text-mid:   #3A3A3E;        /* Secondary text on light */
+  --color-text-muted-light: #7A7A85;  /* Muted on light */
+  --color-text-white: #FFFFFF;
+  --color-text-white-70: rgba(255,255,255,0.70);
+  --color-text-white-45: rgba(255,255,255,0.45);
+
+  /* Semantic aliases */
+  --color-primary:    var(--color-obsidian);
+  --color-accent:     var(--color-platinum);
+  --color-accent-light: var(--color-platinum-light);
+  --color-accent-dim: var(--color-platinum-dim);
+  --color-surface:    var(--color-off-white);
+  --color-surface-dark: var(--color-obsidian);
+  --color-border:     var(--color-charcoal);
+  --color-border-light: var(--color-light-border);
 
   /* Typography */
   --font-display: 'Barlow Condensed', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-body:    'Inter', sans-serif;
 
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
   --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 2rem;
-  --text-4xl: 2.75rem;
-  --text-5xl: 3.75rem;
-  --text-hero: clamp(3rem, 7vw, 5.5rem);
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  2rem;
+  --text-4xl:  2.75rem;
+  --text-5xl:  3.75rem;
+  --text-hero: clamp(3.25rem, 7vw, 5.75rem);
 
   /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2.5rem;
-  --space-xl: 4rem;
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.5rem;
+  --space-xl:  4rem;
   --space-2xl: 6rem;
-  --space-section: clamp(4rem, 8vw, 8rem);
+  --space-section: clamp(5rem, 9vw, 9rem);
 
   /* Radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
   --radius-pill: 999px;
 
-  /* Shadows — deeper on dark theme */
-  --shadow-card: 0 2px 16px rgba(0,0,0,0.40);
-  --shadow-elevated: 0 8px 40px rgba(0,0,0,0.60);
-  --shadow-platinum: 0 0 0 1px rgba(192,192,200,0.25);
+  /* Shadows */
+  --shadow-sm:       0 1px 4px rgba(0,0,0,0.08);
+  --shadow-card:     0 4px 24px rgba(0,0,0,0.10);
+  --shadow-elevated: 0 12px 48px rgba(0,0,0,0.18);
+  --shadow-dark:     0 8px 40px rgba(0,0,0,0.55);
+  --shadow-platinum: 0 0 0 1px rgba(184,184,196,0.18), 0 4px 24px rgba(184,184,196,0.08);
 
   /* Transitions */
-  --transition-base: 220ms ease;
+  --transition-fast: 150ms ease;
+  --transition-base: 240ms ease;
+  --transition-slow: 400ms ease;
 
   /* Layout */
-  --max-width: 1200px;
+  --max-width: 1240px;
+  --nav-height: 76px;
 }

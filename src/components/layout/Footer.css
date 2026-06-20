@@ -1,0 +1,120 @@
+.footer {
+  background: var(--color-surface-dark);
+  color: rgba(255,255,255,0.75);
+  padding-top: 4rem;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1.5fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer__brand img {
+  height: 60px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.footer__tagline {
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  opacity: 0.65;
+  margin-bottom: 1.25rem;
+  max-width: 280px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__socials a {
+  color: rgba(255,255,255,0.55);
+  transition: color var(--transition-base), transform var(--transition-base);
+}
+
+.footer__socials a:hover {
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.footer__heading {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer__link {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.55);
+  transition: color var(--transition-base);
+}
+
+.footer__link:hover {
+  color: rgba(255,255,255,1);
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.footer__contact li {
+  display: flex;
+  gap: 0.625rem;
+  align-items: flex-start;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.footer__icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 1.25rem 0;
+  text-align: center;
+}
+
+.footer__bottom p {
+  font-size: var(--text-xs);
+  opacity: 0.4;
+  line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer__brand {
+    grid-column: auto;
+  }
+}

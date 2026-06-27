@@ -1,39 +1,47 @@
 :root {
-  /* ── Elite Performance: Obsidian · White · Platinum ── */
+  /* ── Canadian Edge: Obsidian · Canadian Red · Ice White ── */
 
-  /* Core palette */
-  --color-obsidian:   #0D0D0D;        /* True obsidian — hero, footer */
-  --color-obsidian-2: #161618;        /* Slightly lifted — dark cards */
-  --color-obsidian-3: #1E1E20;        /* Elevated — hover states */
-  --color-charcoal:   #2A2A2E;        /* Borders on dark */
+  /* Obsidian scale */
+  --color-obsidian:    #0C0C0E;
+  --color-obsidian-2:  #13131A;
+  --color-obsidian-3:  #1A1A24;
+  --color-charcoal:    #2C2C3A;
+  --color-slate:       #3D3D52;
 
-  --color-platinum:   #B8B8C4;        /* Core platinum accent */
-  --color-platinum-light: #D4D4DE;    /* Hover / brighter platinum */
-  --color-platinum-dim: rgba(184,184,196,0.12); /* Subtle tint */
-  --color-platinum-glow: rgba(184,184,196,0.20);
+  /* Canadian Red */
+  --color-red:         #C8102E;
+  --color-red-deep:    #A50D24;
+  --color-red-dim:     rgba(200,16,46,0.12);
+  --color-red-glow:    rgba(200,16,46,0.22);
 
-  --color-white:      #FFFFFF;
-  --color-off-white:  #F8F8FA;        /* Light section bg */
-  --color-light-2:    #F0F0F4;        /* Slightly deeper light */
-  --color-light-border: #E0E0E8;      /* Borders on light bg */
+  /* Clinical White */
+  --color-white:       #FFFFFF;
+  --color-off-white:   #F6F7F9;
+  --color-light-2:     #EDEEF2;
+  --color-light-border:#DFE1E8;
+
+  /* Ice Blue */
+  --color-ice:         #F0F5FA;
+  --color-ice-mid:     #A8CCE8;
+  --color-ice-deep:    #5B9EC9;
 
   /* Text */
-  --color-text-dark:  #0D0D0D;        /* Body text on light bg */
-  --color-text-mid:   #3A3A3E;        /* Secondary text on light */
-  --color-text-muted-light: #7A7A85;  /* Muted on light */
-  --color-text-white: #FFFFFF;
+  --color-text-dark:   #0C0C0E;
+  --color-text-mid:    #3A3A4A;
+  --color-text-muted:  #72728A;
+  --color-text-white:  #FFFFFF;
   --color-text-white-70: rgba(255,255,255,0.70);
   --color-text-white-45: rgba(255,255,255,0.45);
 
   /* Semantic aliases */
-  --color-primary:    var(--color-obsidian);
-  --color-accent:     var(--color-platinum);
-  --color-accent-light: var(--color-platinum-light);
-  --color-accent-dim: var(--color-platinum-dim);
-  --color-surface:    var(--color-off-white);
-  --color-surface-dark: var(--color-obsidian);
-  --color-border:     var(--color-charcoal);
-  --color-border-light: var(--color-light-border);
+  --color-primary:       var(--color-obsidian);
+  --color-accent:        var(--color-red);
+  --color-accent-light:  var(--color-red-deep);
+  --color-accent-dim:    var(--color-red-dim);
+  --color-surface:       var(--color-off-white);
+  --color-surface-dark:  var(--color-obsidian);
+  --color-border:        var(--color-charcoal);
+  --color-border-light:  var(--color-light-border);
 
   /* Typography */
   --font-display: 'Barlow Condensed', sans-serif;
@@ -67,11 +75,11 @@
   --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-sm:       0 1px 4px rgba(0,0,0,0.08);
-  --shadow-card:     0 4px 24px rgba(0,0,0,0.10);
-  --shadow-elevated: 0 12px 48px rgba(0,0,0,0.18);
-  --shadow-dark:     0 8px 40px rgba(0,0,0,0.55);
-  --shadow-platinum: 0 0 0 1px rgba(184,184,196,0.18), 0 4px 24px rgba(184,184,196,0.08);
+  --shadow-sm:       0 1px 4px rgba(0,0,0,0.07);
+  --shadow-card:     0 4px 24px rgba(0,0,0,0.09);
+  --shadow-elevated: 0 12px 48px rgba(0,0,0,0.16);
+  --shadow-dark:     0 8px 40px rgba(0,0,0,0.50);
+  --shadow-red:      0 6px 28px rgba(200,16,46,0.32);
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -79,6 +87,6 @@
   --transition-slow: 400ms ease;
 
   /* Layout */
-  --max-width: 1240px;
-  --nav-height: 76px;
+  --max-width:   1240px;
+  --nav-height:  76px;
 }

@@ -1,138 +1,101 @@
-/* Specialist banner — dark obsidian to contrast light services above */
+/* Specialist Banner — dark obsidian contrast section */
 .specialist {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: grid; grid-template-columns: 1fr 1fr;
   min-height: 560px;
   border-top: 1px solid var(--color-light-border);
 }
 
-.specialist__image-half {
-  position: relative;
-  overflow: hidden;
-}
+.specialist__image-half { position: relative; overflow: hidden; }
 
 .specialist__img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center top;
-  filter: brightness(0.75) saturate(0.7);
+  filter: brightness(0.70) saturate(0.65);
   transition: filter 600ms ease, transform 600ms ease;
 }
 .specialist__image-half:hover .specialist__img {
-  filter: brightness(0.85) saturate(0.85);
-  transform: scale(1.02);
+  filter: brightness(0.80) saturate(0.80); transform: scale(1.02);
 }
 
 .specialist__img-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to right, transparent 25%, var(--color-obsidian) 100%);
+  background: linear-gradient(to right, transparent 25%, var(--color-obsidian-2) 100%);
 }
 
 .specialist__content-half {
-  background: var(--color-obsidian);
+  background: var(--color-obsidian-2);
   padding: 5rem 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
 }
 
-/* Subtle platinum radial glow */
+/* Red glow bottom-right */
 .specialist__content-half::before {
-  content: "";
-  position: absolute;
+  content: ""; position: absolute;
   bottom: -80px; right: -80px;
-  width: 360px; height: 360px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,184,196,0.07) 0%, transparent 70%);
+  width: 360px; height: 360px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,16,46,0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.eyebrow--light { color: rgba(184,184,196,0.75); }
-.eyebrow--light::before { background: var(--color-platinum); }
+.eyebrow--light { color: rgba(200,16,46,0.85); }
+.eyebrow--light::before { background: var(--color-red); }
 
 .specialist__heading {
   font-family: var(--font-display);
   font-size: clamp(1.875rem, 3.5vw, 2.625rem);
-  font-weight: 800;
-  color: var(--color-white);
-  line-height: 1.08;
-  margin: 0.875rem 0 1.375rem;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
+  font-weight: 800; color: var(--color-white);
+  line-height: 1.08; margin: 0.875rem 0 1.375rem;
+  text-transform: uppercase; letter-spacing: -0.01em;
 }
 
 .specialist__body {
-  font-size: 0.975rem;
-  color: rgba(255,255,255,0.52);
-  line-height: 1.82;
-  max-width: 400px;
-  margin-bottom: 2.25rem;
-  font-weight: 300;
+  font-size: 0.975rem; color: rgba(255,255,255,0.52);
+  line-height: 1.82; max-width: 400px;
+  margin-bottom: 2.25rem; font-weight: 300;
 }
 
-/* Platinum left-bar card */
+/* Red left-border specialist card */
 .specialist__card {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-left: 3px solid var(--color-platinum);
+  border-left: 3px solid var(--color-red);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
   margin-bottom: 2.25rem;
   display: inline-flex;
 }
-
-.specialist__card-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
+.specialist__card-info { display: flex; flex-direction: column; gap: 0.3rem; }
 
 .specialist__name {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--color-white);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-family: var(--font-display); font-size: 1.25rem;
+  font-weight: 800; color: var(--color-white);
+  text-transform: uppercase; letter-spacing: 0.04em;
 }
-
 .specialist__role {
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--color-platinum);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  font-size: 0.68rem; font-weight: 700; color: var(--color-red);
+  text-transform: uppercase; letter-spacing: 0.14em;
 }
 
+/* Red CTA button */
 .specialist__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--color-white);
-  color: var(--color-obsidian);
-  padding: 0.9375rem 2rem;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.72rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.10em;
-  transition: all var(--transition-base);
-  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--color-red); color: white;
+  padding: 0.9375rem 2rem; border-radius: var(--radius-sm);
+  font-family: var(--font-body); font-weight: 700; font-size: 0.72rem;
+  text-decoration: none; text-transform: uppercase; letter-spacing: 0.10em;
+  transition: all var(--transition-base); align-self: flex-start;
 }
 .specialist__btn:hover {
-  background: var(--color-platinum-light);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-platinum);
+  background: var(--color-red-deep); transform: translateY(-2px);
+  box-shadow: var(--shadow-red);
 }
 
 @media (max-width: 860px) {
   .specialist { grid-template-columns: 1fr; }
   .specialist__image-half { height: 300px; }
   .specialist__img-overlay {
-    background: linear-gradient(to bottom, transparent 25%, var(--color-obsidian) 100%);
+    background: linear-gradient(to bottom, transparent 25%, var(--color-obsidian-2) 100%);
   }
   .specialist__content-half { padding: 3rem 2rem; }
 }

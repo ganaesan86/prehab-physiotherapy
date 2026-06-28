@@ -1,23 +1,20 @@
 .floating-cta {
-  display: none; position: fixed;
-  bottom: 0; left: 0; right: 0; z-index: 900;
-  padding: 0 1.25rem 1.25rem;
-  pointer-events: none; opacity: 0; transform: translateY(12px);
-  transition: opacity 280ms ease, transform 280ms ease;
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 900;
+  padding: 0 1.25rem 1.25rem; pointer-events: none; opacity: 0;
+  transform: translateY(12px); transition: opacity 280ms ease, transform 280ms ease;
 }
 .floating-cta--visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
 
-/* Canadian Red floating button */
+/* Platinum CTA */
 .floating-cta__btn {
-  display: flex; align-items: center;
-  justify-content: center; gap: 0.5rem; width: 100%;
-  background: var(--color-red); color: white; padding: 1.0625rem;
-  border-radius: var(--radius-md); font-family: var(--font-body);
-  font-weight: 700; font-size: 0.78rem; text-decoration: none;
-  text-transform: uppercase; letter-spacing: 0.10em;
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.20), 0 4px 24px rgba(200,16,46,0.35);
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  width: 100%; background: var(--color-platinum); color: var(--color-obsidian);
+  padding: 1.0625rem; border-radius: var(--radius-md);
+  font-family: var(--font-body); font-weight: 700; font-size: 0.75rem;
+  text-decoration: none; text-transform: uppercase; letter-spacing: 0.12em;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.40), 0 4px 24px rgba(200,200,212,0.20);
   transition: background var(--transition-fast);
 }
-.floating-cta__btn:hover { background: var(--color-red-deep); }
+.floating-cta__btn:hover { background: var(--color-platinum-light); }
 
 @media (max-width: 768px) { .floating-cta { display: block; } }

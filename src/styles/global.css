@@ -1,10 +1,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
+/* Dark-first base — obsidian body */
 body {
   font-family: var(--font-body);
-  color: var(--color-text-dark);
-  background: var(--color-white);
+  color: var(--color-text-white-85);
+  background: var(--color-obsidian);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,142 +24,113 @@ ul, ol { list-style: none; }
 
 .skip-link {
   position: absolute; top: -40px; left: 0;
-  background: var(--color-red); color: #fff;
-  padding: 8px 16px; font-weight: 700;
-  z-index: 9999; transition: top 0.2s; text-decoration: none;
+  background: var(--color-platinum); color: var(--color-obsidian);
+  padding: 8px 16px; font-weight: 700; z-index: 9999;
+  transition: top 0.2s; text-decoration: none;
 }
 .skip-link:focus { top: 0; }
 
-/* ── Shared eyebrow ── */
+/* ── Eyebrow labels ── */
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.28em;
   margin-bottom: 1.125rem;
 }
 .eyebrow::before {
-  content: "";
-  display: block;
-  width: 28px; height: 2px;
-  border-radius: 2px;
-  flex-shrink: 0;
+  content: ""; display: block;
+  width: 28px; height: 1px; flex-shrink: 0;
 }
-.eyebrow--light {
-  color: var(--color-red);
-}
-.eyebrow--light::before { background: var(--color-red); }
+/* On dark bg — platinum */
+.eyebrow--light { color: var(--color-platinum); }
+.eyebrow--light::before { background: var(--color-platinum); }
+/* On dark section — slightly dimmer */
+.eyebrow--dark  { color: var(--color-text-white-60); }
+.eyebrow--dark::before  { background: var(--color-charcoal-2); }
 
-.eyebrow--dark {
-  color: var(--color-text-mid);
-}
-.eyebrow--dark::before { background: var(--color-obsidian); }
-
-/* ── Shared buttons ── */
-.btn-red {
+/* ── Global button system ── */
+/* Primary — platinum on dark */
+.btn-gold, .btn-white {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--color-red); color: #fff;
-  padding: 0.9375rem 2.25rem;
-  border-radius: var(--radius-sm);
-  font-weight: 700; font-size: 0.72rem;
-  text-transform: uppercase; letter-spacing: 0.10em;
-  text-decoration: none; border: none; cursor: pointer;
-  font-family: var(--font-body);
-  transition: all var(--transition-base);
-}
-.btn-red:hover {
-  background: var(--color-red-deep);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-red);
-}
-
-.btn-dark {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--color-obsidian); color: #fff;
-  padding: 0.9375rem 2.25rem;
-  border-radius: var(--radius-sm);
-  font-weight: 700; font-size: 0.72rem;
-  text-transform: uppercase; letter-spacing: 0.10em;
-  text-decoration: none; border: none; cursor: pointer;
-  font-family: var(--font-body);
-  transition: all var(--transition-base);
-}
-.btn-dark:hover {
-  background: var(--color-obsidian-3);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-dark);
-}
-
-.btn-outline-light {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: transparent;
-  color: rgba(255,255,255,0.80);
-  border: 1px solid rgba(255,255,255,0.28);
-  padding: 0.9375rem 2.25rem;
-  border-radius: var(--radius-sm);
-  font-weight: 600; font-size: 0.72rem;
-  text-transform: uppercase; letter-spacing: 0.10em;
-  text-decoration: none; cursor: pointer;
-  font-family: var(--font-body);
-  transition: all var(--transition-base);
-}
-.btn-outline-light:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.65);
-  color: white; transform: translateY(-2px);
-}
-
-.btn-outline-dark {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: transparent; color: var(--color-obsidian);
-  border: 1.5px solid var(--color-obsidian);
-  padding: 0.875rem 2.25rem;
-  border-radius: var(--radius-sm);
-  font-weight: 700; font-size: 0.72rem;
-  text-transform: uppercase; letter-spacing: 0.10em;
-  text-decoration: none; cursor: pointer;
-  font-family: var(--font-body);
-  transition: all var(--transition-base);
-}
-.btn-outline-dark:hover {
-  background: var(--color-obsidian); color: white;
-  transform: translateY(-2px);
-}
-
-/* Legacy aliases used inside section components */
-.btn-white {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--color-white); color: var(--color-obsidian);
+  background: var(--color-platinum); color: var(--color-obsidian);
   padding: 0.9375rem 2.25rem; border-radius: var(--radius-sm);
-  font-weight: 700; font-size: 0.72rem;
-  text-transform: uppercase; letter-spacing: 0.10em;
+  font-weight: 700; font-size: 0.70rem;
+  text-transform: uppercase; letter-spacing: 0.12em;
   text-decoration: none; border: none; cursor: pointer;
   font-family: var(--font-body); transition: all var(--transition-base);
 }
-.btn-white:hover {
-  background: var(--color-light-2); transform: translateY(-2px);
-  box-shadow: var(--shadow-card);
+.btn-gold:hover, .btn-white:hover {
+  background: var(--color-platinum-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
 }
 
+/* Dark / navy → obsidian */
+.btn-navy, .btn-dark {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--color-obsidian-3); color: var(--color-white);
+  border: 1px solid var(--color-charcoal);
+  padding: 0.9375rem 2.25rem; border-radius: var(--radius-sm);
+  font-weight: 700; font-size: 0.70rem;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  text-decoration: none; cursor: pointer;
+  font-family: var(--font-body); transition: all var(--transition-base);
+}
+.btn-navy:hover, .btn-dark:hover {
+  background: var(--color-obsidian-4); border-color: var(--color-charcoal-2);
+  transform: translateY(-2px); box-shadow: var(--shadow-dark);
+}
+
+/* Ghost on dark */
+.btn-outline-light {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: transparent; color: rgba(255,255,255,0.80);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 0.9375rem 2.25rem; border-radius: var(--radius-sm);
+  font-weight: 600; font-size: 0.70rem;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  text-decoration: none; cursor: pointer; font-family: var(--font-body);
+  transition: all var(--transition-base);
+}
+.btn-outline-light:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.60);
+  color: white; transform: translateY(-2px);
+}
+
+/* Ghost on dark section */
+.btn-outline-dark {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: transparent; color: var(--color-text-white-85);
+  border: 1px solid var(--color-charcoal);
+  padding: 0.875rem 2.25rem; border-radius: var(--radius-sm);
+  font-weight: 700; font-size: 0.70rem;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  text-decoration: none; cursor: pointer; font-family: var(--font-body);
+  transition: all var(--transition-base);
+}
+.btn-outline-dark:hover {
+  border-color: var(--color-platinum);
+  color: var(--color-platinum-pale);
+  transform: translateY(-2px);
+}
+
+/* Services CTA alias */
 .btn-primary {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--color-red); color: #fff;
+  background: var(--color-platinum); color: var(--color-obsidian);
   padding: 0.9375rem 2.5rem; border-radius: var(--radius-sm);
-  font-family: var(--font-body); font-weight: 700; font-size: 0.72rem;
-  text-decoration: none; text-transform: uppercase; letter-spacing: 0.10em;
+  font-family: var(--font-body); font-weight: 700; font-size: 0.70rem;
+  text-decoration: none; text-transform: uppercase; letter-spacing: 0.12em;
   transition: all var(--transition-base); border: none; cursor: pointer;
 }
 .btn-primary:hover {
-  background: var(--color-red-deep); transform: translateY(-2px);
-  box-shadow: var(--shadow-red);
+  background: var(--color-platinum-light);
+  transform: translateY(-2px); box-shadow: var(--shadow-gold);
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
   }
 }

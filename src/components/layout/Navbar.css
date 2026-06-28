@@ -15,9 +15,8 @@
 
 .navbar__inner {
   display: flex; align-items: center; gap: 1.5rem; height: 100%;
-  /* Prevent inner content from exceeding viewport width */
   width: 100%;
-  overflow: hidden;
+  /* overflow must NOT be hidden here — it clips the Services dropdown */
 }
 
 .navbar__logo {

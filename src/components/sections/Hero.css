@@ -1,10 +1,15 @@
-/* ── HERO — physelite.com layout style ── */
+/* ── HERO — full bleed, starts below navbar ── */
 .hero {
   position: relative;
-  width: 100%; height: 100vh;
-  min-height: 680px; max-height: 1000px;
+  width: 100%;
+  /* Sit below the fixed navbar — not behind it */
+  margin-top: var(--nav-height);
+  height: calc(100vh - var(--nav-height));
+  min-height: 560px;
+  max-height: 900px;
   overflow: hidden;
-  display: flex; align-items: center;
+  display: flex;
+  align-items: center;
   background: var(--color-obsidian);
 }
 
@@ -15,55 +20,25 @@
 .hero__img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center;
-  /* No filter — full natural image */
   filter: none;
 }
 
-/* No overlay — image completely visible.
-   Text legibility handled by text-shadow and the bottom bar. */
-.hero__overlay {
-  display: none;
-}
+/* No overlay — image completely visible */
+.hero__overlay { display: none; }
 
-/* ── Top-left: counter + category ── */
-.hero__meta {
-  position: absolute;
-  top: calc(var(--nav-height) + 2rem);
-  left: 2rem;
-  z-index: 4;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.hero__counter {
-  font-family: var(--font-display);
-  font-size: 0.72rem; font-weight: 700;
-  color: var(--color-platinum);
-  letter-spacing: 0.18em;
-  opacity: 0.75;
-}
-
-.hero__divider {
-  display: block; width: 32px; height: 1px;
-  background: var(--color-platinum);
-  opacity: 0.35;
-}
-
-.hero__category {
-  font-size: 0.68rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.22em;
-  color: var(--color-platinum-light);
-  opacity: 0.85;
-}
+/* ── Category + counter — HIDDEN (not relevant per user request) ── */
+.hero__meta { display: none; }
 
 /* ── Main content block ── */
 .hero__content {
-  position: relative; z-index: 3;
-  padding-top: var(--nav-height);
-  padding-bottom: 120px; /* clear the bottom footer bar */
+  position: relative;
+  z-index: 3;
+  /* No padding-top needed — hero already sits below navbar */
+  padding-top: 0;
+  padding-bottom: 80px; /* clear the bottom progress bar */
   width: 100%;
-  display: flex; align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .hero__text { max-width: 680px; }
@@ -110,7 +85,6 @@
   display: flex; align-items: center; gap: 0.875rem;
   text-shadow: 0 1px 6px rgba(0,0,0,0.90), 0 2px 16px rgba(0,0,0,0.80);
 }
-/* Leading silver dash */
 .hero__sub::before {
   content: "";
   display: block; width: 36px; height: 1px;
@@ -139,13 +113,14 @@
 
 .hero__btn-ghost {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  color: rgba(255,255,255,0.80);
+  color: rgba(255,255,255,0.90);
   font-family: var(--font-body); font-weight: 600; font-size: 0.72rem;
   text-transform: uppercase; letter-spacing: 0.12em;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.30);
   padding-bottom: 0.125rem;
   transition: all var(--transition-base);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.80);
 }
 .hero__btn-ghost:hover {
   color: var(--color-platinum-light);
@@ -165,7 +140,6 @@
   height: 64px;
 }
 
-/* Progress bars */
 .hero__progress {
   display: flex; gap: 8px; align-items: center; flex: 1;
 }
@@ -192,7 +166,6 @@
   background: rgba(200,200,212,0.20);
 }
 
-/* Arrows */
 .hero__arrows {
   display: flex; gap: 0;
   border-left: 1px solid rgba(255,255,255,0.10);
@@ -212,41 +185,24 @@
   background: rgba(200,200,212,0.06);
 }
 
-/* ── Right side scroll indicator ── */
-.hero__aside {
-  position: absolute; right: 2.5rem; bottom: 80px;
-  z-index: 4;
-  display: flex; flex-direction: column;
-  align-items: center; gap: 0.75rem;
-}
-
-.hero__scroll-line {
-  width: 1px; height: 56px;
-  background: linear-gradient(to bottom, rgba(200,200,212,0.55), rgba(200,200,212,0));
-}
-
-.hero__scroll-label {
-  font-size: 0.58rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.20em;
-  color: rgba(255,255,255,0.30);
-  writing-mode: vertical-rl;
-}
+/* ── Right scroll indicator — HIDDEN to prevent horizontal overflow ── */
+.hero__aside { display: none; }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .hero { max-height: 100svh; min-height: 100svh; }
+  .hero {
+    height: calc(100svh - var(--nav-height));
+    min-height: 500px;
+    max-height: none;
+  }
 
-  .hero__content { padding-top: calc(var(--nav-height) + 2rem); padding-bottom: 90px; }
+  .hero__content { padding-bottom: 80px; }
 
   .hero__heading { font-size: clamp(3rem, 14vw, 5rem); }
 
-  .hero__meta { left: 1.25rem; top: calc(var(--nav-height) + 1rem); }
-
-  .hero__ctas { flex-direction: column; gap: 0.75rem; }
+  .hero__ctas { flex-direction: column; gap: 0.75rem; align-items: stretch; }
   .hero__ctas a { justify-content: center; width: 100%; }
 
   .hero__footer { padding: 0 1.25rem; }
   .hero__progress-item { max-width: 60px; }
-
-  .hero__aside { display: none; }
 }

@@ -1,15 +1,13 @@
-/* Testimonials — obsidian-3, distinct from services */
 .testimonials {
   background: var(--color-obsidian-3);
   padding: var(--space-section) 0;
   border-top: 1px solid var(--color-charcoal);
   position: relative; overflow: hidden;
 }
-/* Watermark quote */
 .testimonials::before {
   content: "\201C"; position: absolute; top: -2rem; left: 50%; transform: translateX(-50%);
   font-family: var(--font-display); font-size: 22rem; font-weight: 800;
-  color: rgba(255,255,255,0.02); line-height: 1; pointer-events: none; user-select: none;
+  color: rgba(200,200,212,0.04); line-height: 1; pointer-events: none; user-select: none;
 }
 
 .testimonials__header { text-align: center; max-width: 580px; margin: 0 auto 3.25rem; position: relative; }
@@ -21,19 +19,35 @@
 }
 .testimonials__subtitle { font-size: 1rem; color: var(--color-text-white-60); line-height: 1.7; font-weight: 300; }
 
-/* 2-col grid of lifted obsidian cards */
-.testimonials__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--color-charcoal); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-charcoal); }
+.testimonials__grid {
+  display: grid; grid-template-columns: repeat(2,1fr);
+  gap: 1px; background: var(--color-charcoal);
+  border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--color-charcoal);
+}
 
 .t-card {
   background: var(--color-obsidian-2); padding: 2.25rem;
   display: flex; flex-direction: column;
   transition: background var(--transition-base);
+  position: relative; overflow: hidden;
+}
+/* Silver shimmer on hover */
+.t-card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, var(--color-platinum) 0%, transparent 60%);
+  opacity: 0; transition: opacity var(--transition-base);
 }
 .t-card:hover { background: var(--color-obsidian-4); }
+.t-card:hover::before { opacity: 1; }
 
+/* More visible silver quote mark */
 .t-card__quote-mark {
-  display: block; font-family: var(--font-display); font-size: 4rem; line-height: 0.75;
-  color: var(--color-platinum); margin-bottom: 0.875rem; font-weight: 800; opacity: 0.18;
+  display: block; font-family: var(--font-display); font-size: 4.5rem; line-height: 0.75;
+  /* Gradient silver */
+  background: linear-gradient(135deg, var(--color-platinum-light) 0%, var(--color-platinum) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.875rem; font-weight: 800; opacity: 0.55;
 }
 
 .t-card__text {
@@ -49,31 +63,33 @@
 .t-card__avatar {
   width: 44px; height: 44px; border-radius: 50%;
   object-fit: cover; flex-shrink: 0;
-  border: 1px solid var(--color-charcoal);
-  filter: grayscale(20%);
+  border: 1px solid rgba(200,200,212,0.25);
+  filter: grayscale(15%);
 }
 .t-card__meta { flex: 1; display: flex; flex-direction: column; gap: 0.125rem; }
 .t-card__name { font-size: 0.875rem; font-weight: 700; color: var(--color-white); letter-spacing: 0.02em; }
+/* Bright silver role */
 .t-card__role {
-  font-size: 0.65rem; color: var(--color-platinum);
-  text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; opacity: 0.80;
+  font-size: 0.65rem; color: var(--color-platinum-light);
+  text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600;
 }
-.stars { display: flex; gap: 2px; color: var(--color-platinum); flex-shrink: 0; opacity: 0.80; }
+/* Silver stars — more opaque */
+.stars { display: flex; gap: 2px; color: var(--color-platinum-light); flex-shrink: 0; opacity: 0.95; }
 
 .testimonials__footer { margin-top: 2.75rem; display: flex; flex-direction: column; align-items: center; gap: 0.875rem; }
 .testimonials__cta-text { color: var(--color-text-white-35); font-size: 0.84rem; letter-spacing: 0.04em; }
 
 .testimonials__google-btn {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  border: 1px solid var(--color-charcoal-2); color: var(--color-text-white-60);
+  border: 1px solid rgba(200,200,212,0.25); color: var(--color-platinum-light);
   padding: 0.75rem 1.75rem; border-radius: var(--radius-sm);
   font-weight: 700; font-size: 0.70rem; text-decoration: none;
   text-transform: uppercase; letter-spacing: 0.12em;
   font-family: var(--font-body); transition: all var(--transition-base);
 }
 .testimonials__google-btn:hover {
-  border-color: var(--color-platinum-border); color: var(--color-platinum-light);
-  transform: translateY(-2px);
+  border-color: var(--color-platinum); color: var(--color-white);
+  background: rgba(200,200,212,0.06); transform: translateY(-2px);
 }
 
 @media (max-width: 640px) { .testimonials__grid { grid-template-columns: 1fr; } }

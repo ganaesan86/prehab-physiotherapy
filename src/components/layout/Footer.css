@@ -1,15 +1,21 @@
-/* Footer — deepest obsidian, platinum top border */
 .footer {
   background: var(--color-obsidian);
   color: var(--color-text-white-35);
   padding-top: 4.5rem;
-  border-top: 2px solid var(--color-platinum);
+  /* More impactful silver top border */
+  border-top: 1px solid transparent;
+  background-image:
+    linear-gradient(var(--color-obsidian), var(--color-obsidian)),
+    linear-gradient(90deg, var(--color-platinum-light), var(--color-platinum), transparent 70%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   position: relative; overflow: hidden;
 }
+/* Silver radial glow */
 .footer::before {
-  content: ""; position: absolute; top: -100px; left: -100px;
-  width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,200,212,0.04) 0%, transparent 65%);
+  content: ""; position: absolute; top: -80px; left: -80px;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,200,212,0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -24,28 +30,32 @@
 .footer__socials { display: flex; gap: 0.625rem; }
 .footer__socials a {
   width: 36px; height: 36px; border-radius: var(--radius-sm);
-  border: 1px solid var(--color-charcoal);
+  border: 1px solid rgba(200,200,212,0.18);
   display: flex; align-items: center; justify-content: center;
-  color: var(--color-text-white-35); transition: all var(--transition-base);
+  color: var(--color-platinum); opacity: 0.55;
+  transition: all var(--transition-base);
 }
 .footer__socials a:hover {
-  border-color: var(--color-platinum-border); color: var(--color-platinum);
-  background: var(--color-platinum-dim); transform: translateY(-2px);
+  border-color: var(--color-platinum-light); color: var(--color-platinum-light);
+  opacity: 1; background: rgba(200,200,212,0.08); transform: translateY(-2px);
 }
 
-/* Platinum headings */
+/* Brighter silver headings */
 .footer__heading {
-  font-size: 0.60rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.20em; color: var(--color-platinum); margin-bottom: 1.25rem; opacity: 0.70;
+  font-size: 0.62rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-platinum-light);
+  margin-bottom: 1.25rem; opacity: 0.85;
 }
 
 .footer__links { display: flex; flex-direction: column; gap: 0.5rem; }
 .footer__link { font-size: 0.855rem; color: var(--color-text-white-35); transition: color var(--transition-fast); }
-.footer__link:hover { color: var(--color-text-white-85); }
+.footer__link:hover { color: var(--color-platinum-light); }
 
 .footer__contact { display: flex; flex-direction: column; gap: 0.875rem; }
 .footer__contact li { display: flex; gap: 0.625rem; align-items: flex-start; font-size: 0.84rem; line-height: 1.55; color: var(--color-text-white-35); }
-.footer__icon { color: var(--color-platinum); flex-shrink: 0; margin-top: 1px; opacity: 0.60; }
+/* Brighter silver contact icons */
+.footer__icon { color: var(--color-platinum-light); flex-shrink: 0; margin-top: 1px; opacity: 0.75; }
 
 .footer__bottom {
   border-top: 1px solid var(--color-charcoal);

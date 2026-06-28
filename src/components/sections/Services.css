@@ -1,8 +1,15 @@
-/* Services — pure obsidian, seamless grid cards */
 .services {
   background: var(--color-obsidian);
   padding: var(--space-section) 0;
   border-top: 1px solid var(--color-charcoal);
+  position: relative;
+}
+/* Silver glow top-right */
+.services::before {
+  content: ""; position: absolute; top: -60px; right: -60px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,200,212,0.06) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 .services__header {
@@ -16,7 +23,7 @@
 }
 .services__subtitle { font-size: 1rem; color: var(--color-text-white-60); line-height: 1.7; font-weight: 300; }
 
-/* Seamless grid — gap-less, borderlined */
+/* Seamless 3-col grid */
 .services__grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1px; background: var(--color-charcoal);
@@ -31,29 +38,39 @@
   transition: background var(--transition-base);
   overflow: hidden;
 }
-/* Platinum shimmer — left-to-right reveal on hover */
+
+/* Full-width silver shimmer top bar on hover */
 .service-card::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--color-platinum) 0%, rgba(200,200,212,0) 100%);
+  background: linear-gradient(90deg, var(--color-platinum-light) 0%, var(--color-platinum) 60%, transparent 100%);
   transform: scaleX(0); transform-origin: left; transition: transform 350ms ease;
+}
+/* Silver corner accent bottom-right */
+.service-card::after {
+  content: ""; position: absolute; bottom: 0; right: 0;
+  width: 40px; height: 40px;
+  background:
+    linear-gradient(315deg, rgba(200,200,212,0.12) 0%, transparent 60%);
+  pointer-events: none;
 }
 .service-card:hover { background: var(--color-obsidian-3); }
 .service-card:hover::before { transform: scaleX(1); }
 
 .service-card__badge {
   position: absolute; top: 1.25rem; right: 1.25rem;
-  font-family: var(--font-display); font-size: 0.62rem; font-weight: 700;
-  color: var(--color-charcoal-2); letter-spacing: 0.06em;
+  font-family: var(--font-display); font-size: 0.65rem; font-weight: 700;
+  color: rgba(200,200,212,0.18); letter-spacing: 0.06em;
 }
 
+/* Brighter silver icons */
 .service-card__icon {
-  color: var(--color-platinum); margin-bottom: 1.375rem;
-  flex-shrink: 0; opacity: 0.75; transition: opacity var(--transition-fast);
+  color: var(--color-platinum-light); margin-bottom: 1.375rem;
+  flex-shrink: 0; opacity: 0.80; transition: opacity var(--transition-fast), color var(--transition-fast);
 }
-.service-card:hover .service-card__icon { opacity: 1; }
+.service-card:hover .service-card__icon { opacity: 1; color: var(--color-white); }
 
 .service-card__title {
-  font-family: var(--font-display); font-size: 1.25rem; font-weight: 800;
+  font-family: var(--font-display); font-size: 1.3rem; font-weight: 800;
   color: var(--color-white); margin-bottom: 0.75rem;
   line-height: 1.1; text-transform: uppercase; letter-spacing: 0.04em;
 }
@@ -62,24 +79,26 @@
   line-height: 1.72; flex: 1; margin-bottom: 1.625rem; font-weight: 300;
 }
 
+/* Silver "learn more" with animated arrow */
 .service-card__link {
   display: inline-flex; align-items: center; gap: 0.375rem;
-  font-size: 0.68rem; font-weight: 700; color: var(--color-platinum);
+  font-size: 0.68rem; font-weight: 700;
+  color: var(--color-platinum-light);
   text-decoration: none; text-transform: uppercase; letter-spacing: 0.12em;
-  transition: gap var(--transition-fast), opacity var(--transition-fast);
-  margin-top: auto; opacity: 0.65;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+  margin-top: auto;
 }
-.service-card__link:hover { gap: 0.625rem; opacity: 1; }
+.service-card__link:hover { gap: 0.625rem; color: var(--color-white); }
 
 /* CTA row */
 .services__cta { margin-top: 3rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 
 .services__phone-note { font-size: 0.84rem; color: var(--color-text-white-35); }
 .services__phone-link {
-  color: var(--color-platinum); font-weight: 600;
-  text-decoration: none; transition: opacity var(--transition-fast);
+  color: var(--color-platinum-light); font-weight: 600;
+  text-decoration: none; transition: color var(--transition-fast);
 }
-.services__phone-link:hover { opacity: 0.70; }
+.services__phone-link:hover { color: var(--color-white); }
 
 @media (max-width: 960px) { .services__grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 580px)  { .services__grid { grid-template-columns: 1fr; } }

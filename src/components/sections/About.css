@@ -1,25 +1,35 @@
-/* About — dark obsidian, lifted from hero */
 .about {
   background: var(--color-obsidian-2);
   padding: var(--space-section) 0;
   position: relative; overflow: hidden;
   border-top: 1px solid var(--color-charcoal);
 }
+/* Silver radial background glow — more visible */
 .about::before {
-  content: ""; position: absolute; top: -120px; right: -120px;
-  width: 450px; height: 450px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,200,212,0.04) 0%, transparent 70%);
+  content: ""; position: absolute; top: -80px; right: -80px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,200,212,0.08) 0%, transparent 65%);
   pointer-events: none;
+}
+/* Silver accent line top */
+.about::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(to right, var(--color-platinum) 0%, transparent 50%);
+  opacity: 0.30;
 }
 
 .about__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
 
-/* Shared eyebrow already in global */
 .about__heading {
   font-family: var(--font-display); font-size: var(--text-4xl); font-weight: 800;
   color: var(--color-white); line-height: 1.0; margin-bottom: 1.5rem;
   text-transform: uppercase; letter-spacing: -0.02em;
 }
+/* Silver highlight on second word group */
+.about__heading span {
+  color: var(--color-platinum-light);
+}
+
 .about__body {
   font-size: 0.975rem; color: var(--color-text-white-60);
   line-height: 1.85; margin-bottom: 1.125rem; font-weight: 300;
@@ -35,7 +45,8 @@
   display: flex; align-items: center; gap: 0.625rem;
   font-size: 0.84rem; font-weight: 500; color: var(--color-text-white-85);
 }
-.about__check { color: var(--color-platinum); flex-shrink: 0; }
+/* Bright silver checkmarks */
+.about__check { color: var(--color-platinum-light); flex-shrink: 0; }
 
 .about__features { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.25rem; }
 
@@ -43,17 +54,20 @@
   display: flex; gap: 1rem; align-items: flex-start;
   background: var(--color-obsidian-3);
   border: 1px solid var(--color-charcoal);
+  border-left: 2px solid var(--color-platinum);   /* silver left accent */
   border-radius: var(--radius-md); padding: 1.125rem 1.25rem;
-  transition: border-color var(--transition-base), background var(--transition-base);
+  transition: border-color var(--transition-base), background var(--transition-base), box-shadow var(--transition-base);
 }
 .about__feature-card:hover {
-  border-color: var(--color-platinum-border);
+  border-left-color: var(--color-platinum-light);
   background: var(--color-obsidian-4);
+  box-shadow: 0 4px 20px rgba(200,200,212,0.08);
 }
-.about__feature-icon { color: var(--color-platinum); flex-shrink: 0; margin-top: 2px; }
+/* Silver icons */
+.about__feature-icon { color: var(--color-platinum-light); flex-shrink: 0; margin-top: 2px; }
 .about__feature-title {
-  font-size: 0.875rem; font-weight: 700; color: var(--color-white); margin-bottom: 0.25rem;
-  letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.80rem;
+  font-size: 0.80rem; font-weight: 700; color: var(--color-white); margin-bottom: 0.25rem;
+  letter-spacing: 0.04em; text-transform: uppercase;
 }
 .about__feature-desc { font-size: 0.84rem; color: var(--color-text-white-60); line-height: 1.6; }
 
@@ -64,20 +78,20 @@
 }
 .about__img-wrap { position: relative; }
 
-/* Platinum offset frame */
+/* Brighter silver offset frame */
 .about__img-deco {
   position: absolute; top: -14px; left: -14px; right: 14px; bottom: 14px;
-  border: 1px solid var(--color-platinum-border);
+  border: 1px solid rgba(200,200,212,0.35);
   border-radius: var(--radius-xl); z-index: 0;
 }
 .about__img {
   position: relative; z-index: 1; width: 100%; height: 460px;
   object-fit: cover; border-radius: var(--radius-xl);
   box-shadow: var(--shadow-elevated);
-  filter: grayscale(10%) contrast(1.05);
+  filter: contrast(1.04);
 }
 
-/* Stats bar */
+/* Stats bar — silver numbers on very dark bg */
 .about__stat-row {
   display: grid; grid-template-columns: repeat(3, 1fr);
   border-radius: var(--radius-md); overflow: hidden;
@@ -85,16 +99,29 @@
 }
 .about__stat {
   display: flex; flex-direction: column; align-items: center;
-  padding: 1.375rem 0.75rem; background: var(--color-obsidian-3);
+  padding: 1.5rem 0.75rem; background: var(--color-obsidian-3);
   text-align: center; border-right: 1px solid var(--color-charcoal);
   transition: background var(--transition-base);
+  position: relative;
+}
+/* Silver top micro-line on hover */
+.about__stat::before {
+  content: ""; position: absolute; top: 0; left: 20%; right: 20%; height: 2px;
+  background: var(--color-platinum);
+  transform: scaleX(0); transition: transform var(--transition-base);
+  border-radius: 2px;
 }
 .about__stat:last-child { border-right: none; }
 .about__stat:hover { background: var(--color-obsidian-4); }
+.about__stat:hover::before { transform: scaleX(1); }
 
 .about__stat-num {
-  font-family: var(--font-display); font-size: 2.25rem; font-weight: 800;
-  color: var(--color-platinum); line-height: 1; letter-spacing: -0.02em;
+  font-family: var(--font-display); font-size: 2.5rem; font-weight: 800;
+  /* Gradient silver number */
+  background: linear-gradient(135deg, var(--color-platinum-light) 0%, var(--color-platinum) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1; letter-spacing: -0.02em;
 }
 .about__stat-label {
   font-size: 0.60rem; font-weight: 600; color: var(--color-text-white-35);

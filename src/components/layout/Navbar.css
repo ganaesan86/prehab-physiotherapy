@@ -1,9 +1,12 @@
 .navbar {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 1000; height: var(--nav-height);
-  background: transparent;
-  transition: background var(--transition-base), box-shadow var(--transition-base);
-  border-bottom: 1px solid transparent;
+  /* Always-on dark background — readable on any hero image, light or dark */
+  background: rgba(8,8,9,0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(200,200,212,0.08);
+  transition: background var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
 .navbar--scrolled {
@@ -46,8 +49,8 @@
 
 .navbar__link {
   display: flex; align-items: center; gap: 0.25rem;
-  padding: 0.5rem 0.875rem; font-size: 0.72rem; font-weight: 500;
-  color: var(--color-text-white-60);
+  padding: 0.5rem 0.875rem; font-size: 0.72rem; font-weight: 600;
+  color: rgba(255,255,255,0.90);
   border-radius: var(--radius-sm);
   transition: color var(--transition-fast);
   background: none; border: none; cursor: pointer; font-family: var(--font-body);
@@ -98,7 +101,7 @@
 .navbar__phone {
   display: flex; align-items: center; gap: 0.375rem;
   font-size: 0.72rem; font-weight: 500;
-  color: var(--color-text-white-60);
+  color: rgba(255,255,255,0.85);
   transition: color var(--transition-fast); white-space: nowrap; letter-spacing: 0.04em;
 }
 .navbar__phone:hover { color: var(--color-platinum-light); }

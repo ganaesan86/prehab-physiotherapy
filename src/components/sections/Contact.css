@@ -8,7 +8,7 @@
 .contact::before {
   content: ""; position: absolute; bottom: -100px; left: -100px;
   width: 450px; height: 450px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,200,212,0.06) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -54,7 +54,7 @@ a.contact__detail-value:hover { color: var(--color-platinum-light); }
 .contact__socials { display: flex; gap: 0.625rem; }
 .contact__socials a {
   width: 36px; height: 36px; border-radius: var(--radius-sm);
-  border: 1px solid rgba(200,200,212,0.20);
+  border: 1px solid rgba(212,175,55,0.20);
   display: flex; align-items: center; justify-content: center;
   color: var(--color-platinum); opacity: 0.65;
   transition: all var(--transition-base);
@@ -62,7 +62,7 @@ a.contact__detail-value:hover { color: var(--color-platinum-light); }
 .contact__socials a:hover {
   border-color: var(--color-platinum-light);
   color: var(--color-platinum-light); opacity: 1;
-  background: rgba(200,200,212,0.08); transform: translateY(-2px);
+  background: rgba(212,175,55,0.08); transform: translateY(-2px);
 }
 
 /* Form panel */
@@ -71,7 +71,7 @@ a.contact__detail-value:hover { color: var(--color-platinum-light); }
   border-radius: var(--radius-lg); padding: 2.75rem;
   border: 1px solid var(--color-charcoal);
   /* Subtle silver glow */
-  box-shadow: 0 0 0 1px rgba(200,200,212,0.06), 0 8px 40px rgba(0,0,0,0.40);
+  box-shadow: 0 0 0 1px rgba(212,175,55,0.06), 0 8px 40px rgba(0,0,0,0.40);
 }
 .contact__form-title {
   font-family: var(--font-display); font-size: 1.625rem; font-weight: 800;
@@ -98,7 +98,7 @@ a.contact__detail-value:hover { color: var(--color-platinum-light); }
 /* Silver focus ring — more visible */
 .contact__input:focus {
   border-color: var(--color-platinum);
-  box-shadow: 0 0 0 3px rgba(200,200,212,0.12);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.12);
 }
 .contact__select {
   appearance: none;
@@ -120,7 +120,7 @@ a.contact__detail-value:hover { color: var(--color-platinum-light); }
 }
 .contact__submit:hover {
   background: linear-gradient(135deg, var(--color-white) 0%, var(--color-platinum-light) 100%);
-  transform: translateY(-1px); box-shadow: 0 6px 28px rgba(200,200,212,0.22);
+  transform: translateY(-1px); box-shadow: 0 6px 28px rgba(212,175,55,0.22);
 }
 
 /* Success */
@@ -136,7 +136,7 @@ a.contact__detail-value:hover { color: var(--color-platinum-light); }
   border: 1px solid var(--color-charcoal);
   border-radius: var(--radius-lg);
   filter: grayscale(75%) brightness(0.70) contrast(1.10);
-  box-shadow: 0 0 0 1px rgba(200,200,212,0.08);
+  box-shadow: 0 0 0 1px rgba(212,175,55,0.08);
 }
 .contact__map { width: 100%; height: 420px; border: none; display: block; }
 

@@ -72,7 +72,7 @@
   text-shadow:
     0 2px 8px rgba(0,0,0,0.90),
     0 4px 32px rgba(0,0,0,0.75),
-    0 0 64px rgba(200,200,212,0.30);
+    0 0 64px rgba(212,175,55,0.30);
 }
 
 /* Sub line */
@@ -108,7 +108,7 @@
 .hero__btn-primary:hover {
   background: var(--color-platinum-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(200,200,212,0.22);
+  box-shadow: 0 6px 28px rgba(212,175,55,0.22);
 }
 
 .hero__btn-ghost {
@@ -135,7 +135,7 @@
   display: flex; align-items: center;
   background: rgba(8,8,9,0.55);
   backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(200,200,212,0.10);
+  border-top: 1px solid rgba(212,175,55,0.10);
   padding: 0 2rem;
   height: 64px;
 }
@@ -163,7 +163,7 @@
 }
 
 .hero__progress-item--active .hero__progress-line {
-  background: rgba(200,200,212,0.20);
+  background: rgba(212,175,55,0.20);
 }
 
 .hero__arrows {
@@ -182,7 +182,7 @@
 }
 .hero__arrow:hover {
   color: var(--color-platinum-light);
-  background: rgba(200,200,212,0.06);
+  background: rgba(212,175,55,0.06);
 }
 
 /* ── Right scroll indicator — HIDDEN to prevent horizontal overflow ── */

@@ -9,7 +9,7 @@
 /* Platinum accent line */
 .service-detail__hero::before {
   content: ""; position: absolute; top: var(--nav-height); left: 0; right: 0; height: 1px;
-  background: linear-gradient(to right, var(--color-platinum), rgba(200,200,212,0)); z-index: 1;
+  background: linear-gradient(to right, var(--color-platinum), rgba(212,175,55,0)); z-index: 1;
 }
 
 .service-detail__back {

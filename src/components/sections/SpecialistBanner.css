@@ -18,17 +18,18 @@
 }
 
 .specialist__content-half {
-  background: var(--color-obsidian-2); padding: 5rem 4rem;
+  background: linear-gradient(135deg, var(--color-sapphire-dark) 0%, var(--color-obsidian-2) 100%);
+  padding: 5rem 4rem;
   display: flex; flex-direction: column; justify-content: center;
   position: relative; overflow: hidden;
   border-left: 1px solid var(--color-charcoal);
 }
-/* Silver glow centre-right */
+/* Gold glow centre-right */
 .specialist__content-half::before {
   content: ""; position: absolute; top: 50%; right: -100px;
   transform: translateY(-50%);
   width: 400px; height: 400px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,200,212,0.07) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(212,175,55,0.10) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -46,8 +47,8 @@
 
 /* Silver-bordered specialist card — now more visible */
 .specialist__card {
-  background: rgba(200,200,212,0.05);
-  border: 1px solid rgba(200,200,212,0.15);
+  background: rgba(212,175,55,0.05);
+  border: 1px solid rgba(212,175,55,0.15);
   border-left: 3px solid var(--color-platinum-light);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem; margin-bottom: 2.25rem; display: inline-flex;
@@ -77,7 +78,7 @@
 }
 .specialist__btn:hover {
   background: var(--color-white);
-  transform: translateY(-2px); box-shadow: 0 6px 28px rgba(200,200,212,0.25);
+  transform: translateY(-2px); box-shadow: 0 6px 28px rgba(212,175,55,0.25);
 }
 
 @media (max-width: 860px) {

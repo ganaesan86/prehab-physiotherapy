@@ -15,7 +15,7 @@
 .footer::before {
   content: ""; position: absolute; top: -80px; left: -80px;
   width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,200,212,0.06) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -30,14 +30,14 @@
 .footer__socials { display: flex; gap: 0.625rem; }
 .footer__socials a {
   width: 36px; height: 36px; border-radius: var(--radius-sm);
-  border: 1px solid rgba(200,200,212,0.18);
+  border: 1px solid rgba(212,175,55,0.18);
   display: flex; align-items: center; justify-content: center;
   color: var(--color-platinum); opacity: 0.55;
   transition: all var(--transition-base);
 }
 .footer__socials a:hover {
   border-color: var(--color-platinum-light); color: var(--color-platinum-light);
-  opacity: 1; background: rgba(200,200,212,0.08); transform: translateY(-2px);
+  opacity: 1; background: rgba(212,175,55,0.08); transform: translateY(-2px);
 }
 
 /* Brighter silver headings */

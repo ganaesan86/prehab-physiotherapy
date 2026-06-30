@@ -12,7 +12,7 @@
   padding: 1.0625rem; border-radius: var(--radius-md);
   font-family: var(--font-body); font-weight: 700; font-size: 0.75rem;
   text-decoration: none; text-transform: uppercase; letter-spacing: 0.12em;
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.40), 0 4px 24px rgba(200,200,212,0.20);
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.40), 0 4px 24px rgba(212,175,55,0.20);
   transition: background var(--transition-fast);
 }
 .floating-cta__btn:hover { background: var(--color-platinum-light); }

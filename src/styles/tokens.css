@@ -1,38 +1,44 @@
 :root {
-  /* ── OBSIDIAN ELITE ── Pure dark with platinum silver ── */
+  /* ── ROYAL ATHLETIC PERFORMANCE ── Sapphire · Gold · Deep Navy ── */
 
-  /* Obsidian scale — true deep blacks */
-  --color-obsidian:    #080809;   /* Pure obsidian — hero, footer */
-  --color-obsidian-2:  #101012;   /* Lifted — dark section bg */
-  --color-obsidian-3:  #18181B;   /* Cards, elevated surfaces */
-  --color-obsidian-4:  #222226;   /* Hover states */
-  --color-charcoal:    #2C2C32;   /* Borders on dark */
-  --color-charcoal-2:  #3A3A42;   /* Muted borders */
+  /* Deep Navy scale — primary dark backgrounds */
+  --color-obsidian:    #0A1530;   /* Deepest navy — hero, footer */
+  --color-obsidian-2:  #0F1E42;   /* Lifted navy — section bg */
+  --color-obsidian-3:  #15295A;   /* Elevated navy — cards */
+  --color-obsidian-4:  #1C3470;   /* Hover state navy */
+  --color-charcoal:    #2A4080;   /* Borders on dark */
+  --color-charcoal-2:  #3A52A0;   /* Muted borders */
 
-  /* Platinum silver — precision accent */
-  --color-platinum:      #C8C8D4;
-  --color-platinum-light:#DCDCE8;
-  --color-platinum-pale: #F0F0F5;
-  --color-platinum-dim:  rgba(200,200,212,0.10);
-  --color-platinum-glow: rgba(200,200,212,0.22);
-  --color-platinum-border: rgba(200,200,212,0.20);
+  /* Sapphire — vivid royal blue, primary brand colour */
+  --color-sapphire:        #1E50C8;
+  --color-sapphire-light:  #3A6EE0;
+  --color-sapphire-dark:   #143A96;
+  --color-sapphire-pale:   #C7D8F8;
+
+  /* Champagne Gold — precision accent, replaces platinum silver */
+  --color-platinum:        #D4AF37;   /* Core gold */
+  --color-platinum-light:  #F0CC5C;   /* Bright hover gold */
+  --color-platinum-pale:   #FBF0CE;   /* Very pale gold for text tints */
+  --color-platinum-dim:    rgba(212,175,55,0.14);
+  --color-platinum-glow:   rgba(212,175,55,0.28);
+  --color-platinum-border: rgba(212,175,55,0.32);
 
   /* White scale */
   --color-white:       #FFFFFF;
-  --color-off-white:   #F4F4F6;
-  --color-light-2:     #EBEBEF;
-  --color-light-border:#DDDDE5;
+  --color-off-white:   #F5F6FA;
+  --color-light-2:     #EBEEF6;
+  --color-light-border:#DCE2F0;
 
   /* Text on dark */
   --color-text-white:     #FFFFFF;
   --color-text-white-85:  rgba(255,255,255,0.85);
-  --color-text-white-60:  rgba(255,255,255,0.60);
-  --color-text-white-35:  rgba(255,255,255,0.35);
+  --color-text-white-60:  rgba(255,255,255,0.62);
+  --color-text-white-35:  rgba(255,255,255,0.38);
 
   /* Text on light */
-  --color-text-dark:  #0A0A0C;
-  --color-text-mid:   #28282E;
-  --color-text-muted: #68687A;
+  --color-text-dark:  #0A1530;
+  --color-text-mid:   #1C2A52;
+  --color-text-muted: #5A6790;
 
   /* Semantic aliases — keep existing components working */
   --color-primary:       var(--color-obsidian);
@@ -44,14 +50,14 @@
   --color-border:        var(--color-charcoal);
   --color-border-light:  var(--color-light-border);
 
-  /* Legacy navy aliases → obsidian so nothing breaks */
+  /* Legacy navy aliases → deep navy scale */
   --color-navy:        var(--color-obsidian-3);
   --color-navy-2:      var(--color-obsidian-2);
   --color-navy-3:      var(--color-obsidian);
   --color-navy-light:  var(--color-obsidian-4);
   --color-navy-border: var(--color-charcoal);
 
-  /* Legacy gold aliases → platinum so nothing breaks */
+  /* Legacy gold aliases → champagne gold scale */
   --color-gold:        var(--color-platinum);
   --color-gold-light:  var(--color-platinum-light);
   --color-gold-pale:   var(--color-platinum-pale);
@@ -59,7 +65,7 @@
   --color-gold-glow:   var(--color-platinum-glow);
   --color-gold-border: var(--color-platinum-border);
 
-  /* Ice → dark for testimonials */
+  /* Ice / silver aliases → sapphire-tinted */
   --color-ice:    var(--color-obsidian-2);
   --color-silver: var(--color-text-white-60);
 
@@ -87,7 +93,7 @@
   --space-2xl: 6rem;
   --space-section: clamp(5rem, 9vw, 9rem);
 
-  /* Radius — slightly sharper = more elite */
+  /* Radius */
   --radius-sm:   4px;
   --radius-md:   8px;
   --radius-lg:   16px;
@@ -95,12 +101,12 @@
   --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-sm:       0 1px 4px rgba(0,0,0,0.30);
-  --shadow-card:     0 4px 24px rgba(0,0,0,0.45);
-  --shadow-elevated: 0 12px 48px rgba(0,0,0,0.60);
-  --shadow-dark:     0 8px 40px rgba(0,0,0,0.70);
-  --shadow-gold:     0 4px 24px rgba(200,200,212,0.18);
-  --shadow-navy:     0 8px 40px rgba(0,0,0,0.65);
+  --shadow-sm:       0 1px 4px rgba(10,21,48,0.30);
+  --shadow-card:     0 4px 24px rgba(10,21,48,0.35);
+  --shadow-elevated: 0 12px 48px rgba(10,21,48,0.50);
+  --shadow-dark:     0 8px 40px rgba(10,21,48,0.65);
+  --shadow-gold:     0 4px 24px rgba(212,175,55,0.30);
+  --shadow-navy:     0 8px 40px rgba(10,21,48,0.60);
 
   /* Transitions */
   --transition-fast: 150ms ease;

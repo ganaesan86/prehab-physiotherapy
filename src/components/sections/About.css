@@ -8,7 +8,7 @@
 .about::before {
   content: ""; position: absolute; top: -80px; right: -80px;
   width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,200,212,0.08) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 65%);
   pointer-events: none;
 }
 /* Silver accent line top */
@@ -61,7 +61,7 @@
 .about__feature-card:hover {
   border-left-color: var(--color-platinum-light);
   background: var(--color-obsidian-4);
-  box-shadow: 0 4px 20px rgba(200,200,212,0.08);
+  box-shadow: 0 4px 20px rgba(212,175,55,0.08);
 }
 /* Silver icons */
 .about__feature-icon { color: var(--color-platinum-light); flex-shrink: 0; margin-top: 2px; }
@@ -81,7 +81,7 @@
 /* Brighter silver offset frame */
 .about__img-deco {
   position: absolute; top: -14px; left: -14px; right: 14px; bottom: 14px;
-  border: 1px solid rgba(200,200,212,0.35);
+  border: 1px solid rgba(212,175,55,0.35);
   border-radius: var(--radius-xl); z-index: 0;
 }
 .about__img {
